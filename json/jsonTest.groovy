@@ -1,10 +1,10 @@
 import groovy.json.*
 
 def slurper = new JsonSlurper();
-def json = '{"person":{"name":"Micah Breedlove","age":29,"pets":["dog","cat"]}}';
+def json = '{"person":{"name":"Micah Breedlove","handle":"DruiD628","age":29,"pets":["dog","cat"]}}';
 def result = slurper.parseText(json);
 
+result.person.each{ key, value  ->
+    println(value)
+}
 
-System.out.println(result.person.name);
-System.out.println(result.person.age);
-System.out.println(result.person.pets[1]);
